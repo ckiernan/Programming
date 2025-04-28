@@ -1,0 +1,32 @@
+#scratchpad
+
+import math
+
+#listOfPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199]
+listOfPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+
+def isUniquePrime(n):
+    a = math.sqrt(n)
+    print('a.sqrt = ' + str(a))
+
+    a = int(math.sqrt(n))
+    print('a.int = ' + str(a))
+
+#    a = int(math.sqrt(n) // 1)
+#    print('a//1 = ' + str(a))
+    print
+
+    #see if the number is divisable by the primes below it
+    for k in listOfPrimes:
+        print('k = ' + str(k) + '; a = ' + str(a))
+        
+        if k < a:
+            print('n: ' + str(n) + ' k: ' + str(k))
+            print('n / k: ' + str(n / k))
+            print('n % k: ' + str(n % k))
+            print
+#            return str(n) + ' is a prime'
+
+
+print(isUniquePrime(19))
+

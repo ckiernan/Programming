@@ -1,0 +1,58 @@
+# Python program to print prime factors
+
+import math
+
+a = 1
+k = 0
+cnt = 0
+
+listOfPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+
+# A function to print all prime factors of
+# a given number n
+def primeFactors(n):
+    # Print the number of two's that divide n
+    while n % 2 == 0:
+        #print(2)
+        n = n // 2
+		
+	# n must be odd at this point
+	# so a skip of 2 ( i = i + 2) can be used
+    for i in range(3,int(math.sqrt(n))+1,2):
+        # while i divides n , print i ad divide n
+            while n % i== 0:
+                #print(i)
+                n = n // i
+	
+	# Condition if n is a prime
+	# number greater than 2
+    if n > 2:
+	#print(n)
+        if n not in listOfPrimes:
+            listOfPrimes.append(n)
+            #print('listOfPrimes: ' + listOfPrimes)
+            #print('\t'.join(map(str, listOfPrimes)))
+            print('len LoP: ' + str(len(listOfPrimes)))
+            return len(listOfPrimes)
+        
+# Driver Program to test above function
+
+while a < 150000:
+    cnt = primeFactors(a)
+    if cnt != None: print('cnt = ' + str(cnt))
+    if cnt > 10001:
+        print('break')
+        break
+    a += 1
+
+print('last LoP element: ' + str(listOfPrimes[-1]))
+print('len LoP: ' + str(len(listOfPrimes)))
+listOfPrimes.sort(reverse = True)
+print('\t'.join(map(str, listOfPrimes)))
+
+
+#n = 315
+#primeFactors(n)
+
+# This code is contributed by Harshit Agrawal 
+#Code Improved by Sarthak Shrivastava
